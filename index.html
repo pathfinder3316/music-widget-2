@@ -1,99 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Custom Audio Player</title>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+  <meta charset="UTF-8" />
+  <title>Custom Player</title>
   <style>
-    /* Styling is same as your provided style */
-    /* We only change artwork URL below */
-    #player-bg-artwork {
-      background-image: url("https://raw.githubusercontent.com/pathfinder3316/music-player/main/cover.jpg
-");
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fafafa;
     }
-    #album-art img {
-      content: url("https://raw.githubusercontent.com/pathfinder3316/music-player/main/cover.jpg
-");
+    img {
+      max-width: 300px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    audio {
+      width: 300px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-<div id="player-bg-artwork"></div>
-<div id="player-bg-layer"></div>
-<div id="player-container">
-  <div id="player">
-    <div id="player-track">
-      <div id="album-name">Custom Album</div>
-      <div id="track-name">Custom Song</div>
-      <div id="track-time">
-        <div id="current-time"></div>
-        <div id="track-length"></div>
-      </div>
-      <div id="seek-bar-container">
-        <div id="seek-time"></div>
-        <div id="s-hover"></div>
-        <div id="seek-bar"></div>
-      </div>
-    </div>
-    <div id="player-content">
-      <div id="album-art" class="active">
-        <img src="https://raw.githubusercontent.com/pathfinder3316/music-player/main/cover.jpg
-" class="active" />
-        <div id="buffer-box">Buffering ...</div>
-      </div>
-      <div id="player-controls">
-        <div class="control">
-          <div class="button" id="play-previous">
-            <i class="fas fa-backward"></i>
-          </div>
-        </div>
-        <div class="control">
-          <div class="button" id="play-pause-button">
-            <i class="fas fa-play"></i>
-          </div>
-        </div>
-        <div class="control">
-          <div class="button" id="play-next">
-            <i class="fas fa-forward"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<audio id="audio" src="https://raw.githubusercontent.com/pathfinder3316/music-player/main/song.mp3
-"></audio>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script>
-  const audio = document.getElementById('audio');
-  const playPauseBtn = document.getElementById('play-pause-button');
-  const playPauseIcon = playPauseBtn.querySelector('i');
-  const seekBar = document.getElementById('seek-bar');
-  const currentTimeDisplay = document.getElementById('current-time');
-  const trackLengthDisplay = document.getElementById('track-length');
-
-  playPauseBtn.addEventListener('click', function () {
-    if (audio.paused) {
-      audio.play();
-      playPauseIcon.className = 'fas fa-pause';
-    } else {
-      audio.pause();
-      playPauseIcon.className = 'fas fa-play';
-    }
-  });
-
-  audio.addEventListener('timeupdate', function () {
-    const progress = (audio.currentTime / audio.duration) * 100;
-    seekBar.style.width = progress + '%';
-
-    const curMin = Math.floor(audio.currentTime / 60);
-    const curSec = Math.floor(audio.currentTime % 60);
-    const durMin = Math.floor(audio.duration / 60);
-    const durSec = Math.floor(audio.duration % 60);
-
-    currentTimeDisplay.textContent = `${curMin.toString().padStart(2, '0')}:${curSec.toString().padStart(2, '0')}`;
-    trackLengthDisplay.textContent = `${durMin.toString().padStart(2, '0')}:${durSec.toString().padStart(2, '0')}`;
-  });
-</script>
+  <h2>Custom Album</h2>
+  <h3>Custom Song</h3>
+  
+  <img src="https://cdn.jsdelivr.net/gh/pathfinder3316/music-player/cover.jpg" alt="Album Cover" />
+  
+  <br />
+  
+  <audio controls>
+    <source src="https://cdn.jsdelivr.net/gh/pathfinder3316/music-player/song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </body>
 </html>
