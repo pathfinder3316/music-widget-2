@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>Custom Player</title>
+  <meta charset="UTF-8">
+  <title>기억의 플레이리스트</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
-      margin: 0;
-      padding: 16px;
-      font-family: Arial, sans-serif;
-      background-color: #fafafa;
-      color: #222;
-    }
-    .player-container {
-      width: 100%;
-      max-width: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
       text-align: center;
+      padding: 50px;
     }
-    .player-container img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
+    .cover {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      margin-bottom: 20px;
     }
     audio {
       width: 100%;
-      max-width: 100%;
-      margin-top: 16px;
+      max-width: 400px;
+      outline: none;
     }
-    h2, h3 {
-      margin: 0.5
+  </style>
+</head>
+<body>
+  <h1>기억의 플레이리스트</h1>
+  <img src="https://cdn.jsdelivr.net/gh/pathfinder3316/music-player/cover.jpg" alt="커버 이미지" class="cover">
+  <br>
+  <audio controls>
+    <source src="https://cdn.jsdelivr.net/gh/pathfinder3316/music-player/song.mp3" type="audio/mpeg">
+    브라우저가 오디오를 지원하지 않습니다.
+  </audio>
+</body>
+</html>
+
