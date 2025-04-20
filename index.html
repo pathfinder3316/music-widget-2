@@ -4,33 +4,30 @@
   <meta charset="UTF-8" />
   <title>Custom Player</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #fafafa;
+    * {
+      box-sizing: border-box;
     }
-    img {
-      max-width: 300px;
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      color: #222;
+    }
+    .player-container {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+    .player-container img {
+      width: 100%;
+      height: auto;
       border-radius: 12px;
-      margin: 20px 0;
     }
     audio {
-      width: 300px;
-      margin-top: 10px;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 16px;
     }
-  </style>
-</head>
-<body>
-  <h2>Custom Album</h2>
-  <h3>Custom Song</h3>
-  
-  <img src="https://cdn.jsdelivr.net/gh/pathfinder3316/music-player/cover.jpg" alt="Album Cover" />
-  
-  <br />
-  
-  <audio controls>
-    <source src="https://cdn.jsdelivr.net/gh/pathfinder3316/music-player/song.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</body>
-</html>
+    h2, h3 {
+      margin: 0.5
